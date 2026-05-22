@@ -64,13 +64,13 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const temple_id = req.params.temple_id;
   if (req.header('apiKey') === apiKey) {
-    Temple.find({ temple_id: temple_id })
+    Temple.findOne({ temple_id: temple_id })
       .then((data) => {
         if (!data)
           res
             .status(404)
             .send({ message: 'Not found Temple with id ' + temple_id });
-        else res.send(data[0]);
+        else res.send(data);
       })
       .catch((err) => {
         res.status(500).send({

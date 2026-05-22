@@ -2,9 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-// ... (Your database connection config and other middleware)
 
-// 1. Require the UI handler and the auto-generated JSON file
+
+
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
 
